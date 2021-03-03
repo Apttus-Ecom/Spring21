@@ -106,7 +106,7 @@
                                 <a href="#addProductToCart">addProductToCart</a>
                             </li>
                             <li>
-                                <a href="#childCart">childCart</a>
+                                <a href="#cloneCart">cloneCart</a>
                             </li>
                             <li>
                                 <a href="#createNewCart">createNewCart</a>
@@ -119,9 +119,6 @@
                             </li>
                             <li>
                                 <a href="#getCartWithId">getCartWithId</a>
-                            </li>
-                            <li>
-                                <a href="#getChildCart">getChildCart</a>
                             </li>
                             <li>
                                 <a href="#getMyCart">getMyCart</a>
@@ -479,18 +476,18 @@ export class MyComponent implements OnInit{
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="childCart"></a>
+                    <a name="cloneCart"></a>
                     <span class="name">
                         <b>
-                            childCart
+                            cloneCart
                         </b>
-                        <a href="#childCart"><span class="icon ion-ios-link"></span></a>
+                        <a href="#cloneCart"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>childCart()</code>
+<code>cloneCart(cartId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, targetCartId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -499,13 +496,83 @@ export class MyComponent implements OnInit{
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>To render the iFrame, a business object Id must be determined by the client.
-The Business Object Id can be retrieved from a child cart associated with the primary cart.
-To retrieve this child cart, this method will be invoked.</p>
-</div>
+                    <div class="io-description"><p>Creates a child cart (clone) of the active cart. The child cart created has a reference to the active cart.</p>
+<h3 id="example">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
+
+export class MyComponent {
+
+      constructor(private cartService: CartService) {}
+
+      cloneCart() {
+        this.cartService.cloneCart().subscribe(
+          cart =&gt; {...},
+          err =&gt; {...}
+        );
+      }
+}</code></pre></div></div>
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cartId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Cart identifier of the cart to be cloned. If the param is not specified, it creates a clone of active cart in the application.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>targetCartId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Optional param to specify the target cart to be cloned to.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable of the cloned cart when operation completes.</p>
 
                     </div>
                 </td>
@@ -813,47 +880,6 @@ FALSE: Cart is succesfully priced and recent attempt to price the cart is succes
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getChildCart"></a>
-                    <span class="name">
-                        <b>
-                            getChildCart
-                        </b>
-                        <a href="#getChildCart"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getChildCart()</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>To fetch the secondary cart details, secondary cart id is passed.</p>
-</div>
-
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Observable of secondary cart.</p>
-
                     </div>
                 </td>
             </tr>
