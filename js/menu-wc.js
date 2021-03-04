@@ -50,18 +50,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="additional-pages"' : 'id="xs-additional-pages"' }>
                                     <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-digital-commerce-template-from-winter-&#x27;19-to-summer-&#x27;20-patch-1.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from Winter &#x27;19 to Summer &#x27;20 Patch 1</a>
-                                    </li>
-                                    <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-partner-commerce-template-from-winter-&#x27;19-to-summer-&#x27;20-patch-1.html" data-type="entity-link" data-context-id="additional">Upgrading the Partner Commerce Template from Winter &#x27;19 to Summer &#x27;20 Patch 1</a>
-                                    </li>
-                                    <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-digital-commerce-template-from-summer-&#x27;20-to-winter-&#x27;20.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from Summer &#x27;20 to Winter &#x27;20</a>
-                                    </li>
-                                    <li class="link ">
-                                        <a href="additional-documentation/upgrading-the-partner-commerce-template-from-summer-&#x27;20-to-winter-&#x27;20.html" data-type="entity-link" data-context-id="additional">Upgrading the Partner Commerce Template from Summer &#x27;20 to Winter &#x27;20</a>
-                                    </li>
-                                    <li class="link ">
                                         <a href="additional-documentation/upgrading-the-digital-commerce-template-from-summer-&#x27;20-to-spring-&#x27;21.html" data-type="entity-link" data-context-id="additional">Upgrading the Digital Commerce Template from Summer &#x27;20 to Spring &#x27;21</a>
                                     </li>
                                     <li class="link ">

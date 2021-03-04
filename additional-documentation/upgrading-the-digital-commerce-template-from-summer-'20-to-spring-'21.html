@@ -51,17 +51,18 @@
 
 <h1 id="upgrading-the-digital-commerce-template-from-summer-20-patch-1-to-spring-21">Upgrading the Digital Commerce Template from Summer &#39;20 Patch 1 to Spring &#39;21</h1>
 <h2 id="table-of-contents">Table Of Contents</h2>
-<p>-<a href="#upgrade-libs">Updating The Libraries</a>
--<a href="#upgrade-ang10">Upgrading To Angular 10</a>
--<a href="#replace-gallery">Replace ngx-gallery With ngx-gallery-9</a>
--<a href="#upgrade-others">Upgrade Your Other Dependencies</a>
--<a href="#ladd-and-core">Install &quot;ladda&quot; And &quot;core-js&quot;</a>
--<a href="#roboto">Roboto Font SCSS File</a>
--<a href="#ivy">Turn Off Ivy</a>
--<a href="#product-detail">Product Detail Component Updates</a>
--<a href="#resolver">Product Detail Resolver Updates</a>
--<a href="#pricingMode">Flag Required For Pricing Mode</a>
--[Set Value For Collaboration Type](#Collaboration Type)</p>
+<ul>
+<li><a href="#upgrade-libs">Updating The Libraries</a></li>
+<li><a href="#upgrade-ang10">Upgrading To Angular 10</a></li>
+<li><a href="#replace-gallery">Replace ngx-gallery With ngx-gallery-9</a></li>
+<li><a href="#upgrade-others">Upgrade Your Other Dependencies</a></li>
+<li><a href="#ladd-and-core">Install &quot;ladda&quot; And &quot;core-js&quot;</a></li>
+<li><a href="#roboto">Roboto Font SCSS File</a></li>
+<li><a href="#ivy">Turn Off Ivy</a></li>
+<li><a href="#product-detail">Product Detail Component Updates</a></li>
+<li><a href="#resolver">Product Detail Resolver Updates</a></li>
+<li><a href="#pricingMode">Flag Required For Pricing Mode</a></li>
+</ul>
 <div id="upgrade-libs"/>
 
 <h2 id="updating-the-libraries">Updating The Libraries</h2>
@@ -76,25 +77,37 @@
     &quot;&#64;apttus/core&quot;: &quot;^2101.x.x&quot;,
     &quot;&#64;apttus/ecommerce&quot;: &quot;^2101.x.x&quot;,
     &quot;&#64;apttus/elements&quot;: &quot;^2101.x.x&quot;,
-    ...</code></pre></div><h2 id="upgrading-to-angular-10">Upgrading To Angular 10</h2>
+    ...</code></pre></div><div id="upgrade-ang10"/>
+
+<h2 id="upgrading-to-angular-10">Upgrading To Angular 10</h2>
 <p>Spring &#39;21 SDK is built on Angular 10 and to consume it you should upgrade your templates to Angular 10. </p>
 <p>To upgrade your template to Angular 10, run the following command:</p>
 <div><pre class="line-numbers"><code class="language-shell">ng update &#64;angular/cli &#64;angular/core —force</code></pre></div><p>For more information about Angular 10 upgrade, refer <a href="https://medium.com/@balramchavan/how-to-upgrade-angular-version-to-latest-release-version-10-48cd64ad21b3">document</a>.</p>
+<div id="replace-gallery"/>
+
 <h2 id="replacing-ngx-gallery-with-ngx-gallery-9">Replacing ngx-gallery With ngx-gallery-9</h2>
 <p>The &quot;ngx-gallery&quot; library that is used in product detail page no longer supports Angular 10. You should replace the &quot;ngx-gallery&quot;
 with &quot;ngx-gallery-9&quot; which is basically the same library but upgraded to Angular 9/10.</p>
+<div id="upgrade-others"/>
+
 <h2 id="upgrading-your-other-dependencies">Upgrading Your Other Dependencies</h2>
 <p>It is recommended that you update your other developments and run-time dependencies as well to work seamlessly with Angular 10. To update other dependencies you must install 
 the <code>npm-check-updates</code> library globally.</p>
 <div><pre class="line-numbers"><code class="language-shell">npm i -g npm-check-updates</code></pre></div><p>After you have updated the other dependencies, go to your project and run the following command.</p>
 <div><pre class="line-numbers"><code class="language-shell">ncu -u</code></pre></div><p>This updates all the dependencies of your package.json to the latest version. Also, you must<br>update the Apttus libraries to the latest spring version and then delete the &quot;node_modules&quot; and &quot;package-lock.json&quot;. Lastly, run a fresh npm install.</p>
-<div><pre class="line-numbers"><code class="language-shell">npm install</code></pre></div><h2 id="install-ladda-and-core-js">Install &quot;ladda&quot; And &quot;core-js&quot;</h2>
+<div><pre class="line-numbers"><code class="language-shell">npm install</code></pre></div><div id="ladd-and-core"/>
+
+<h2 id="install-ladda-and-core-js">Install &quot;ladda&quot; And &quot;core-js&quot;</h2>
 <p>You must install &quot;ladda&quot; and &quot;core-js&quot; libraries separately to make your project build smoothly.</p>
+<div id="roboto"/>
+
 <h2 id="roboto-font-scss-file">Roboto Font SCSS File</h2>
 <p>Angular.json is loaded with roboto SCSS file. You must move the roboto SCSS file to &quot;styles.scss&quot; to avoid build issues with 
 angular 10 upgrade. You must update your &quot;styles.scss&quot; file as shown below.</p>
 <div><pre class="line-numbers"><code class="language-scss">$roboto-font-path: &#39;~roboto-fontface/fonts&#39;;
-&#64;import &quot;~roboto-fontface/css/roboto/sass/roboto-fontface-regular&quot;;</code></pre></div><h2 id="turn-off-ivy">Turn Off Ivy</h2>
+&#64;import &quot;~roboto-fontface/css/roboto/sass/roboto-fontface-regular&quot;;</code></pre></div><div id="ivy"/>
+
+<h2 id="turn-off-ivy">Turn Off Ivy</h2>
 <p>Currently there are some issues in using the latest Angular Ivy compiler. You must turn it off in your 
 tsconfig.json file and then change the &quot;module&quot; to &quot;es2020&quot;.</p>
 <div><pre class="line-numbers"><code class="language-json">{
@@ -121,7 +134,9 @@ tsconfig.json file and then change the &quot;module&quot; to &quot;es2020&quot;.
   &quot;angularCompilerOptions&quot;: {
     &quot;enableIvy&quot;: false
   }
-}</code></pre></div><h2 id="product-detail-component-updates">Product Detail Component Updates</h2>
+}</code></pre></div><div id="product-detail"/>
+
+<h2 id="product-detail-component-updates">Product Detail Component Updates</h2>
 <p>The product configuration component (<code>&lt;apt-product-configuration&gt;</code>) has been updated with changes in the input and output parameters.
 You must pass the product ID as the input instead of the complete product. The component no longer provides the <code>configurationChange</code> output event. You must use the new <code>ProductConfigurationService</code> 
 to listen to configuration changes and more.</p>
@@ -146,12 +161,16 @@ ngOnDestroy() {
   _.forEach(this.subscriptions, item =&gt; {
     if (item) item.unsubscribe();
   });
-}</code></pre></div><h2 id="product-detail-resolver-updates">Product Detail Resolver Updates</h2>
+}</code></pre></div><div id="resolver"/>
+
+<h2 id="product-detail-resolver-updates">Product Detail Resolver Updates</h2>
 <p>Every-time the product detail page is loaded, a reset of some data is needed in the product configuration service. Add the command provided below at the beginning of the &#39;resolve&#39; method.</p>
 <div><pre class="line-numbers"><code class="language-ts">resolve(route: ActivatedRouteSnapshot): Observable&lt;ProductDetailsState&gt; {
     this.productConfigurationService.onChangeConfiguration(null);
     ...
-}    </code></pre></div><h2 id="flag-required-for-pricing-mode">Flag Required For Pricing Mode</h2>
+}    </code></pre></div><div id="pricingMode"/>
+
+<h2 id="flag-required-for-pricing-mode">Flag Required For Pricing Mode</h2>
 <p>A new flag <code>pricingMode</code> has been introduced that enables pricing through classic CPQ pricing or Turbo Pricing.
 pricingMode: &#39;Default&#39; | &#39;Turbo&#39;
 In Summer &#39;20 template, there were known issues while using pricingMode: &#39;Turbo&#39;. It is recommended to use &#39;Default&#39; mode.</p>
