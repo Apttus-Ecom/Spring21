@@ -54,7 +54,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/apttus/ecommerce/src/lib/modules/order/services/order-line-item/order-line-item.service.ts</code>
+            <code>projects/apttus/ecommerce/src/lib/modules/order/services/order-line-item.service.ts</code>
         </p>
 
             <p class="comment">
@@ -69,7 +69,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                    <code>OrderLineItemServiceCore</code>
+                    <code>AObjectService</code>
             </p>
 
 
@@ -77,6 +77,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#type">type</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -86,6 +100,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#getOrderLineItems">getOrderLineItems</a>
+                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getOrderLineItemsForOrder">getOrderLineItemsForOrder</a>
@@ -108,6 +125,98 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOrderLineItems"></a>
+                    <span class="name">
+                        <b>
+                            getOrderLineItems
+                        </b>
+                        <a href="#getOrderLineItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOrderLineItems(orderId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method returns  list of order line items for the given orderId</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+    import { OrderLineItemService, OrderLineItem } from &#39;@apttus/ecommerce&#39;;
+    import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">export class MyComponent implements OnInit{
+    orderLineItemList: Array&lt;OrderLineItem&gt;;
+    orderLineItemList$: Observable&lt;Array&lt;OrderLineItem&gt;&gt;;
+
+    constructor(private orderLineItemService: OrderLineItemService){}
+
+    ngOnInit(){
+        this.orderLineItemService.getOrderLineItems(orderId: string).subscribe(o =&gt; this.orderLineItemList = o);
+        // or
+        this.orderLineItemList$ = this.orderLineItemService.getOrderLineItems(orderId: string);
+    }
+}
+```</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>orderId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>null</code>
+                                    </td>
+
+                                    <td>
+                                        <p>the order id to fetch the related order line items results</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;OrderLineItem&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>an observable array of order line items</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -293,6 +402,33 @@ export class MyComponent implements OnInit{
             </tr>
         </tbody>
     </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="type"></a>
+                        <span class="name">
+                            <b>
+                            type</b>
+                            <a href="#type"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>OrderLineItem</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
     </div>

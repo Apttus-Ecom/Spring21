@@ -54,7 +54,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/apttus/ecommerce/src/lib/modules/abo/services/asset/asset.service.ts</code>
+            <code>projects/apttus/ecommerce/src/lib/modules/abo/services/asset.service.ts</code>
         </p>
 
             <p class="comment">
@@ -69,7 +69,7 @@
                 <h3>Extends</h3>
             </p>
             <p class="comment">
-                        <code><a href="../injectables/AssetService.html" target="_self" >AssetServiceCore</a></code>
+                    <code>AObjectService</code>
             </p>
 
 
@@ -77,6 +77,36 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#accountService">accountService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#attributeGroupService">attributeGroupService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#soapService">soapService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#storefrontService">storefrontService</a>
+                            </li>
+                            <li>
+                                <a href="#type">type</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -100,6 +130,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#getAssetLineItemsforProducts">getAssetLineItemsforProducts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#getBundleItemsForAssetLineItem">getBundleItemsForAssetLineItem</a>
                             </li>
                             <li>
@@ -111,6 +145,7 @@
                                 <a href="#incrementAssets">incrementAssets</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#renewAssets">renewAssets</a>
                             </li>
                             <li>
@@ -469,6 +504,102 @@ export class MyComponent implements OnInit{
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getAssetLineItemsforProducts"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getAssetLineItemsforProducts
+                        </b>
+                        <a href="#getAssetLineItemsforProducts"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAssetLineItemsforProducts(productList: <a href="../classes/Product.html">Array<Product> | Array<string></a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@memoize()<br /></code>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method can be used to get the asset line items for given set of products.
+ABO must be enabled in the storefront to get asset line item records.</p>
+<h3 id="example">Example:</h3>
+<div><pre class="line-numbers"><code class="language-typescript">import { AssetService } from &#39;&#64;apttus/ecommerce&#39;;
+
+export class MyComponent implements OnInit{
+    assetLineItems: Array&lt;AssetLineItem&gt;;
+    assetLineItems$: Observable&lt;Array&lt;AssetLineItem&gt;&gt;;
+
+    constructor(private assetService: AssetService){}
+
+    ngOnInit(){
+        this.assetService.getAssetLineItemsforProducts(products: Array&lt;Product&gt;).subscribe(assetLineItems =&gt; {...});
+        // or
+        this.assetLineItems$ = this.assetService.getAssetLineItemsforProducts(products: Array&lt;Product&gt;);
+    }
+}</code></pre></div></div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>productList</td>
+                                    <td>
+                                                <code><a href="../classes/Product.html" target="_self" >Array&lt;Product&gt; | Array&lt;string&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>array of products or an array of string representing product ids.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;Array&lt;AssetLineItemExtended&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Observable&lt;Array<AssetLineItem>&gt; returns an observable list of asset line item records.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getBundleItemsForAssetLineItem"></a>
                     <span class="name">
                         <b>
@@ -700,6 +831,7 @@ export class MyComponent implements OnInit{
                     <a name="renewAssets"></a>
                     <span class="name">
                         <b>
+                            <span class="modifier">Public</span>
                             renewAssets
                         </b>
                         <a href="#renewAssets"><span class="icon ion-ios-link"></span></a>
@@ -708,7 +840,8 @@ export class MyComponent implements OnInit{
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>renewAssets(assetIds: Array<string>, renewEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, renewTerm: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, farthestAssetEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>renewAssets(assetIds: Array<string>, renewEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, renewTerm: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, farthestAssetEndDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
@@ -730,7 +863,7 @@ export class MyComponent implements OnInit{
     ngOnInit(){
         this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean)subscribe(lineItemMap =&gt; {...});
         // or
-        this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean);
+        this.lineItemMap$ = this.assetService.renewAssets(assetIds: Array&lt;string&gt;, renewEndDate: Date, renewTerm: number, cartId: string, farthestAssetEndDate: boolean);
     }
 }</code></pre></div></div>
 
@@ -947,6 +1080,121 @@ export class MyComponent implements OnInit{
             </tr>
         </tbody>
     </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="accountService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            accountService</b>
+                            <a href="#accountService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(AccountService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="attributeGroupService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            attributeGroupService</b>
+                            <a href="#attributeGroupService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(ProductAttributeGroupService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="soapService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            soapService</b>
+                            <a href="#soapService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(SoapService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="storefrontService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            storefrontService</b>
+                            <a href="#storefrontService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(StorefrontService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="type"></a>
+                        <span class="name">
+                            <b>
+                            type</b>
+                            <a href="#type"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>AssetLineItemExtended</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
     </div>

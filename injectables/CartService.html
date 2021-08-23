@@ -79,10 +79,26 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#apiService">apiService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#configService">configService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#ngZone">ngZone</a>
+                            </li>
+                            <li>
                                 <a href="#onCartError">onCartError</a>
                             </li>
                             <li>
                                 <a href="#type">type</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#userService">userService</a>
                             </li>
                         </ul>
                     </td>
@@ -106,6 +122,9 @@
                                 <a href="#addProductToCart">addProductToCart</a>
                             </li>
                             <li>
+                                <a href="#childCart">childCart</a>
+                            </li>
+                            <li>
                                 <a href="#cloneCart">cloneCart</a>
                             </li>
                             <li>
@@ -115,16 +134,27 @@
                                 <a href="#deleteCart">deleteCart</a>
                             </li>
                             <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#deleteLocalCart">deleteLocalCart</a>
+                            </li>
+                            <li>
                                 <a href="#getCartPriceStatus">getCartPriceStatus</a>
                             </li>
                             <li>
                                 <a href="#getCartWithId">getCartWithId</a>
                             </li>
                             <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getCurrentCartId">getCurrentCartId</a>
+                            </li>
+                            <li>
                                 <a href="#getMyCart">getMyCart</a>
                             </li>
                             <li>
                                 <a href="#isPricePending">isPricePending</a>
+                            </li>
+                            <li>
+                                <a href="#onInit">onInit</a>
                             </li>
                             <li>
                                 <a href="#priceCart">priceCart</a>
@@ -142,10 +172,11 @@
                                 <a href="#setCartActive">setCartActive</a>
                             </li>
                             <li>
-                                <a href="#updateCartItems">updateCartItems</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#setCurrentCartId">setCurrentCartId</a>
                             </li>
                             <li>
-                                <a href="#updateLineItemsAndpriceCart">updateLineItemsAndpriceCart</a>
+                                <a href="#updateCartItems">updateCartItems</a>
                             </li>
                         </ul>
                     </td>
@@ -476,6 +507,43 @@ export class MyComponent implements OnInit{
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="childCart"></a>
+                    <span class="name">
+                        <b>
+                            childCart
+                        </b>
+                        <a href="#childCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>childCart()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>To render the iFrame, a business object Id must be determined by the client.
+The Business Object Id can be retrieved from a child cart associated with the primary cart.
+To retrieve this child cart, this method will be invoked.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Cart.html" target="_self" >Observable&lt;Cart&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="cloneCart"></a>
                     <span class="name">
                         <b>
@@ -487,7 +555,7 @@ export class MyComponent implements OnInit{
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>cloneCart(cartId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, targetCartId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>cloneCart(cartId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, targetId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -496,21 +564,6 @@ export class MyComponent implements OnInit{
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Creates a child cart (clone) of the active cart. The child cart created has a reference to the active cart.</p>
-<h3 id="example">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">import { CartService } from &#39;&#64;apttus/ecommerce&#39;;
-
-export class MyComponent {
-
-      constructor(private cartService: CartService) {}
-
-      cloneCart() {
-        this.cartService.cloneCart().subscribe(
-          cart =&gt; {...},
-          err =&gt; {...}
-        );
-      }
-}</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -521,7 +574,6 @@ export class MyComponent {
                                     <td>Type</td>
                                     <td>Optional</td>
                                     <td>Default value</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -532,19 +584,16 @@ export class MyComponent {
                                     </td>
 
                                     <td>
-                                        Yes
+                                        No
                                     </td>
 
                                     <td>
+                                        <code>CartService.getCurrentCartId()</code>
                                     </td>
 
-                                    <td>
-                                        <p>Cart identifier of the cart to be cloned. If the param is not specified, it creates a clone of active cart in the application.</p>
-
-                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>targetCartId</td>
+                                    <td>targetId</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -557,10 +606,6 @@ export class MyComponent {
                                         <code>null</code>
                                     </td>
 
-                                    <td>
-                                        <p>Optional param to specify the target cart to be cloned to.</p>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -572,8 +617,7 @@ export class MyComponent {
 
                     </div>
                     <div class="io-description">
-                        <p>Observable of the cloned cart when operation completes.</p>
-
+                        
                     </div>
                 </td>
             </tr>
@@ -787,6 +831,41 @@ export class MyComponent{
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="deleteLocalCart"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            deleteLocalCart
+                        </b>
+                        <a href="#deleteLocalCart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteLocalCart()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getCartPriceStatus"></a>
                     <span class="name">
                         <b>
@@ -880,6 +959,41 @@ FALSE: Cart is succesfully priced and recent attempt to price the cart is succes
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentCartId"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            getCurrentCartId
+                        </b>
+                        <a href="#getCurrentCartId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCurrentCartId()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
                     </div>
                 </td>
             </tr>
@@ -1046,6 +1160,39 @@ export class MyComponent implements OnInit{
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="onInit"></a>
+                    <span class="name">
+                        <b>
+                            onInit
+                        </b>
+                        <a href="#onInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onInit()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="priceCart"></a>
                     <span class="name">
                         <b>
@@ -1057,7 +1204,7 @@ export class MyComponent implements OnInit{
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>priceCart(pricingMode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>priceCart(pricingMode: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, lineNumbers?: Array<number>)</code>
                 </td>
             </tr>
 
@@ -1115,6 +1262,22 @@ export class MyComponent implements OnInit{
 
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>lineNumbers</td>
+                                    <td>
+                                            <code>Array&lt;number&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -1155,11 +1318,11 @@ export class MyComponent implements OnInit{
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Price active cart and publishing its state to all subscribing components.</p>
+                    <div class="io-description"><p>Refreshes a cart based on the given id.</p>
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -1377,7 +1540,7 @@ export class MyComponent implements OnInit{
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>setCartActive(cart: <a href="../classes/Cart.html">Cart</a>)</code>
+<code>setCartActive(cart: <a href="../classes/Cart.html">Cart</a>, priceCart: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
                 </td>
             </tr>
 
@@ -1407,6 +1570,7 @@ export class MyComponent implements OnInit{
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Default value</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1420,6 +1584,23 @@ export class MyComponent implements OnInit{
                                         No
                                     </td>
 
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>priceCart</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>false</code>
+                                    </td>
 
                                 </tr>
                             </tbody>
@@ -1434,6 +1615,72 @@ export class MyComponent implements OnInit{
                     <div class="io-description">
                         <p>Observable<boolean> returns a boolean observable containing true if the cart was successfully set active.</p>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setCurrentCartId"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            setCurrentCartId
+                        </b>
+                        <a href="#setCurrentCartId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setCurrentCartId(cartId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cartId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -1525,83 +1772,96 @@ export class MyComponent implements OnInit{
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="updateLineItemsAndpriceCart"></a>
-                    <span class="name">
-                        <b>
-                            updateLineItemsAndpriceCart
-                        </b>
-                        <a href="#updateLineItemsAndpriceCart"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>updateLineItemsAndpriceCart(cartItemList: Array<any>)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Updates cart items to locally managed cart. So all the changes can be pushed to UI.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>cartItemList</td>
-                                    <td>
-                                            <code>Array&lt;any&gt;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>: List of cart items to be updated to cart state</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
             <section>
     
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="apiService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            apiService</b>
+                            <a href="#apiService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ApiService</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(ApiService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="configService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            configService</b>
+                            <a href="#configService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ConfigurationService</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(ConfigurationService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngZone"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            ngZone</b>
+                            <a href="#ngZone"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(NgZone)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -1644,6 +1904,34 @@ export class MyComponent implements OnInit{
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>Cart</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            userService</b>
+                            <a href="#userService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(UserService)</code>
                         </td>
                     </tr>
 

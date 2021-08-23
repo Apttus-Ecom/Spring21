@@ -135,7 +135,7 @@
                                 <a href="#PriceList">PriceList</a>
                             </li>
                             <li>
-                                <a href="#PriceListId__c">PriceListId__c</a>
+                                <a href="#PriceListId">PriceListId</a>
                             </li>
                             <li>
                                 <a href="#ShippingAddress">ShippingAddress</a>
@@ -208,7 +208,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Apttus_Config2__AccountLocations__r&#x27;, aql: &#x27;AccountId&#x27;})<br />@Type(undefined)<br />
+                                @Expose({name: &#x27;Apttus_Config2__AccountLocations__r&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -244,7 +244,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ChildAccounts&#x27;})<br />@Type(undefined)<br />
+                                @Expose({name: &#x27;ChildAccounts&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -280,7 +280,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingAddress&#x27;, view: undefined})<br />
+                                @AField({soql: &#x27;BillingAddress&#x27;, view: undefined})<br />@Expose({name: &#x27;BillingAddress&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -316,7 +316,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingCity&#x27;, aql: &#x27;BillingCity&#x27;})<br />
+                                @Expose({name: &#x27;BillingCity&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -352,7 +352,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingCountry&#x27;, aql: &#x27;BillingCountry&#x27;})<br />
+                                @Expose({name: &#x27;BillingCountry&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -388,7 +388,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingCountryCode &#x27;, aql: &#x27;BillingCountryCode &#x27;})<br />
+                                @Expose({name: &#x27;BillingCountryCode &#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -424,7 +424,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingPostalCode&#x27;, aql: &#x27;BillingPostalCode&#x27;})<br />
+                                @Expose({name: &#x27;BillingPostalCode&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -460,7 +460,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingState&#x27;, aql: &#x27;BillingState&#x27;})<br />
+                                @Expose({name: &#x27;BillingState&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -496,7 +496,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingStateCode &#x27;, aql: &#x27;BillingStateCode &#x27;})<br />
+                                @Expose({name: &#x27;BillingStateCode &#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -532,7 +532,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;BillingStreet&#x27;, aql: &#x27;BillingStreet&#x27;})<br />
+                                @Expose({name: &#x27;BillingStreet&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -568,7 +568,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Industry&#x27;, view: undefined})<br />
+                                @AField({soql: &#x27;Industry&#x27;, view: undefined})<br />@Expose({name: &#x27;Industry&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -604,7 +604,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Name&#x27;, aql: &#x27;Name&#x27;})<br />
+                                @Expose({name: &#x27;Name&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -640,7 +640,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Owner&#x27;})<br />@Type(undefined)<br />
+                                @Expose({name: &#x27;Owner&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -676,7 +676,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;OwnerId&#x27;, view: undefined, compactLabel: &#x27;Owner&#x27;})<br />
+                                @AField({soql: &#x27;OwnerId&#x27;, view: undefined, compactLabel: &#x27;Owner&#x27;})<br />@Expose({name: &#x27;OwnerId&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -712,7 +712,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ParentId&#x27;, aql: &#x27;ParentId&#x27;})<br />
+                                @Expose({name: &#x27;ParentId&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -748,7 +748,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;Phone&#x27;, view: undefined})<br />
+                                @AField({soql: &#x27;Phone&#x27;, view: undefined})<br />@Expose({name: &#x27;Phone&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -784,7 +784,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;PriceListId__r&#x27;, aql: &#x27;DefaultPriceListId&#x27;})<br />@Type(undefined)<br />
+                                @Expose({name: &#x27;PriceListId__r&#x27;})<br />@Type(undefined)<br />
                             </code>
                         </td>
                     </tr>
@@ -796,11 +796,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="PriceListId__c"></a>
+                        <a name="PriceListId"></a>
                         <span class="name">
                             <b>
-                            PriceListId__c</b>
-                            <a href="#PriceListId__c"><span class="icon ion-ios-link"></span></a>
+                            PriceListId</b>
+                            <a href="#PriceListId"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -820,7 +820,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;PriceListId__c&#x27;, view: undefined})<br />
+                                @AField({soql: &#x27;PriceListId__c&#x27;, view: undefined})<br />@Expose({name: &#x27;PriceListId__c&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -856,7 +856,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingAddress&#x27;, view: undefined})<br />
+                                @AField({soql: &#x27;ShippingAddress&#x27;, view: undefined})<br />@Expose({name: &#x27;ShippingAddress&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -892,7 +892,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingCity&#x27;, aql: &#x27;ShippingCity&#x27;})<br />
+                                @Expose({name: &#x27;ShippingCity&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -928,7 +928,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingCountry&#x27;, aql: &#x27;ShippingCountry&#x27;})<br />
+                                @Expose({name: &#x27;ShippingCountry&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -964,7 +964,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingCountryCode &#x27;, aql: &#x27;ShippingCountryCode &#x27;})<br />
+                                @Expose({name: &#x27;ShippingCountryCode &#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -1000,7 +1000,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingPostalCode&#x27;, aql: &#x27;ShippingPostalCode&#x27;})<br />
+                                @Expose({name: &#x27;ShippingPostalCode&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -1036,7 +1036,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingState&#x27;, aql: &#x27;ShippingState&#x27;})<br />
+                                @Expose({name: &#x27;ShippingState&#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -1072,7 +1072,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingStateCode &#x27;, aql: &#x27;ShippingStateCode &#x27;})<br />
+                                @Expose({name: &#x27;ShippingStateCode &#x27;})<br />
                             </code>
                         </td>
                     </tr>
@@ -1108,7 +1108,7 @@
                             <b>Decorators : </b>
                             <br />
                             <code>
-                                @AField({soql: &#x27;ShippingStreet&#x27;, aql: &#x27;ShippingStreet&#x27;})<br />
+                                @Expose({name: &#x27;ShippingStreet&#x27;})<br />
                             </code>
                         </td>
                     </tr>

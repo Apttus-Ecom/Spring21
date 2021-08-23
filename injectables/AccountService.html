@@ -101,9 +101,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getAccountById">getAccountById</a>
-                            </li>
-                            <li>
                                 <a href="#getCurrentAccount">getCurrentAccount</a>
                             </li>
                             <li>
@@ -134,73 +131,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAccountById"></a>
-                    <span class="name">
-                        <b>
-                            getAccountById
-                        </b>
-                        <a href="#getAccountById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getAccountById(accountId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Retrieves the Account information based on the accound id passed.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>accountId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../classes/Account.html" target="_self" >Observable&lt;Array&lt;Account&gt;&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>an observable containing the account record.</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getCurrentAccount"></a>
                     <span class="name">
                         <b>
@@ -216,28 +146,20 @@
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@MemoizeAll()<br /></code>
+                </td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Retrieves the current active account (used for order-on-behalf functions)</p>
-<h3 id="example">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
-import { Observable } from &#39;rxjs/Observable&#39;;
-
-export class MyComponent implements OnInit{
-    account: Account;
-    account$: Observable&lt;Account&gt;;
-
-    constructor(private accountService: AccountService){}
-
-    ngOnInit(){
-        this.accountService.getCurrentAccount().subscribe(a =&gt; this.account = a);
-        // or
-        this.account$ + this.accountService.getCurrentAccount();
-    }
-}</code></pre></div></div>
+</div>
 
                     <div>
                     </div>
@@ -272,6 +194,13 @@ export class MyComponent implements OnInit{
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@MemoizeAll()<br /></code>
+                </td>
+            </tr>
 
 
 
@@ -279,22 +208,7 @@ export class MyComponent implements OnInit{
                 <td class="col-md-4">
                     <div class="io-description"><p>Retrieves the account associated with the current user.
 For guest user it retrieves the account associated with the storefront object.</p>
-<h3 id="example">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
-import { Observable } from &#39;rxjs/Observable&#39;;
-
-export class MyComponent implements OnInit{
-    account: Account;
-    account$: Observable&lt;Account&gt;;
-
-    constructor(private accountService: AccountService){}
-
-    ngOnInit(){
-        this.accountService.getMyAccount().subscribe(a =&gt; this.account = a);
-        // or
-        this.account$ + this.accountService.getMyAccount();
-    }
-}</code></pre></div></div>
+</div>
 
                     <div>
                     </div>
@@ -336,21 +250,7 @@ export class MyComponent implements OnInit{
                 <td class="col-md-4">
                     <div class="io-description"><p>Sets the selected account to be the current active account for order-on-behalf functions.
 Will store the selected account record in local storage</p>
-<h3 id="example">Example:</h3>
-<div><pre class="line-numbers"><code class="language-typescript">import { AccountService, Account } from &#39;&#64;apttus/ecommerce&#39;;
-import { Observable } from &#39;rxjs/Observable&#39;;
-
-export class MyComponent implements OnInit{
-    constructor(private accountService: AccountService){}
-
-    setAccount(account: Account){
-        this.accountService.setAccount(account, true)
-            .subscribe(
-                a =&gt; {...},
-                err =&gt; {...}
-            );
-    }
-}</code></pre></div></div>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>

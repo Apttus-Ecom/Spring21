@@ -61,8 +61,8 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Price matrixes are used to map various product facets to a price adjustment. For example, there may be matrixes for attributes or quantities that adjust the base price. Use this
-service to retrieve the data for those matrixes.</p>
+                <p>Price matrices are used to map various product facets to a price adjustment. For example, there may be matrixes for attributes or quantities that adjust the base price. Use this
+service to retrieve the data for those matrices.</p>
 
             </p>
 
@@ -86,6 +86,9 @@ service to retrieve the data for those matrixes.</p>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#priceListItemService">priceListItemService</a>
+                            </li>
                             <li>
                                 <a href="#type">type</a>
                             </li>
@@ -196,7 +199,7 @@ service to retrieve the data for those matrixes.</p>
 
 
                                     <td>
-                                        <p>An optional parameter of definining the specific attribute group to retrieve matrix data for</p>
+                                        <p>An optional parameter of defining the specific attribute group to retrieve matrix data for.</p>
 
                                     </td>
                                 </tr>
@@ -286,7 +289,7 @@ service to retrieve the data for those matrixes.</p>
 
 
                                     <td>
-                                        <p>An optional parameter of definining the specific attribute group to retrieve matrix data for</p>
+                                        <p>An optional parameter defining the specific attribute group to retrieve matrix data for.</p>
 
                                     </td>
                                 </tr>
@@ -313,6 +316,27 @@ service to retrieve the data for those matrixes.</p>
         <h3 id="inputs">
             Properties
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="priceListItemService"></a>
+                        <span class="name">
+                            <b>
+                            priceListItemService</b>
+                            <a href="#priceListItemService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.injector.get(PriceListItemService)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>

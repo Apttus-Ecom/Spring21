@@ -116,7 +116,7 @@
                                 <a href="#getAppliedPromotionForCart">getAppliedPromotionForCart</a>
                             </li>
                             <li>
-                                <a href="#onInit">onInit</a>
+                                <a href="#getIncentiveByCode">getIncentiveByCode</a>
                             </li>
                             <li>
                                 <a href="#removeAppliedPromotion">removeAppliedPromotion</a>
@@ -307,18 +307,18 @@ export class MyComponent implements OnInit{
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onInit"></a>
+                    <a name="getIncentiveByCode"></a>
                     <span class="name">
                         <b>
-                            onInit
+                            getIncentiveByCode
                         </b>
-                        <a href="#onInit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getIncentiveByCode"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onInit()</code>
+<code>getIncentiveByCode(incentiveCodes?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -327,9 +327,48 @@ export class MyComponent implements OnInit{
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Method to get list of incentives based on matching criteria. Criteria should contain valid incentive codes.</p>
+</div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>incentiveCodes</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>List of IncentiveCodes seperated by commas </p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../classes/Incentive.html" target="_self" >Observable&lt;Array&lt;Incentive&gt;&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Return list of Incentives for matching criteria.</p>
 
                     </div>
                 </td>

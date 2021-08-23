@@ -62,23 +62,6 @@
     <code>projects/apttus/elements/src/lib/mini-cart/mini-cart.component.ts</code>
 </p>
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>The Mini Cart component is a cart icon with an associated dropdown menu. The cart icon should be displayed in a fixed header of a page so it is accessible to the user at all times. Once items have been added to the user&#39;s current cart a badge will appear next to the Mini Cart icon with the total number of items.</p>
-<p>When a user clicks the Mini Cart icon the associated dropdown menu will be displayed. The Mini Cart dropdown menu shows the current line items that have been added to the cart. Line items include information about the product, controls for updating the quantity of items, and a control for removing the item from the cart. A cart total price and checkout button are also shown in the Mini Cart dropdown.</p>
-<h3>Preview</h3>
-<img class="jumbotron" src="https://raw.githubusercontent.com/Apttus-Ecom/Summer19/master/res/miniCart.png" style="max-width: 100%">
-<h3>Usage</h3>
-
-<div><pre class="line-numbers"><code class="language-typescript">import { MiniCartModule } from &#39;&#64;apttus/elements&#39;;
-
-&#64;NgModule({
-  imports: [MiniCartModule, ...]
-})
-export class AppModule {}</code></pre></div>
-    </p>
 
 
     <p class="comment">
@@ -86,23 +69,18 @@ export class AppModule {}</code></pre></div>
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
-    <p class="comment">
-        <h3>Example</h3>
-    </p>
-    <div class="io-description">
-                <div>
-                    <pre class="line-numbers"><code class="language-html">&lt;apt-mini-cart   [productLink]=&quot;routeToProduct&quot;   [productIdentifier]=&quot;productIdentifier&quot;   [cartLink]=&quot;routeToCart&quot;   [manageCartLink]=&quot;routeToManageCart&quot;&gt;&lt;/apt-mini-cart&gt;</code></pre>
-                </div>
-    </div>
 
 <section>
     <h3>Metadata</h3>
     <table class="table table-sm table-hover">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -154,6 +132,9 @@ export class AppModule {}</code></pre></div>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#btnDropdown">btnDropdown</a>
+                            </li>
+                            <li>
                                 <a href="#loading">loading</a>
                             </li>
                             <li>
@@ -175,6 +156,9 @@ export class AppModule {}</code></pre></div>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#dropdown">dropdown</a>
+                            </li>
                             <li>
                                 <a href="#navigateToCart">navigateToCart</a>
                             </li>
@@ -222,7 +206,7 @@ export class AppModule {}</code></pre></div>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(cartService: <a href="../injectables/CartService.html">CartService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, productConfigurationService: <a href="../injectables/ProductConfigurationService.html">ProductConfigurationService</a>, miniCartService: <a href="../injectables/MiniCartService.html">MiniCartService</a>, exceptionService: <a href="../injectables/ExceptionService.html">ExceptionService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, cartApiService: <a href="../injectables/CartApiService.html">CartApiService</a>)</code>
+<code>constructor(cartService: <a href="../injectables/CartService.html">CartService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, exceptionService: <a href="../injectables/ExceptionService.html">ExceptionService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, productConfigurationService: <a href="../injectables/ProductConfigurationService.html">ProductConfigurationService</a>, miniCartService: <a href="../injectables/MiniCartService.html">MiniCartService</a>)</code>
                     </td>
                 </tr>
 
@@ -264,30 +248,6 @@ export class AppModule {}</code></pre></div>
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>productConfigurationService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/ProductConfigurationService.html" target="_self" >ProductConfigurationService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>miniCartService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/MiniCartService.html" target="_self" >MiniCartService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>exceptionService</td>
                                                   
                                                         <td>
@@ -312,10 +272,22 @@ export class AppModule {}</code></pre></div>
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>cartApiService</td>
+                                                        <td>productConfigurationService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/CartApiService.html" target="_self" >CartApiService</a></code>
+                                                                        <code><a href="../injectables/ProductConfigurationService.html" target="_self" >ProductConfigurationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>miniCartService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MiniCartService.html" target="_self" >MiniCartService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -427,6 +399,70 @@ export class AppModule {}</code></pre></div>
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dropdown"></a>
+                    <span class="name">
+                        <b>
+                            dropdown
+                        </b>
+                        <a href="#dropdown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>dropdown(evt: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>evt</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -558,6 +594,37 @@ export class AppModule {}</code></pre></div>
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="btnDropdown"></a>
+                        <span class="name">
+                            <b>
+                            btnDropdown</b>
+                            <a href="#btnDropdown"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ElementRef&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;btnDropdown&#x27;, {static: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="loading"></a>
                         <span class="name">
                             <b>
@@ -635,7 +702,7 @@ export class AppModule {}</code></pre></div>
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;cartItems$ | async as cartItems&quot;&gt;
     &lt;div class&#x3D;&quot;dropdown&quot;&gt;
-        &lt;button class&#x3D;&quot;btn btn-link dropdown-toggle mr-2&quot; href&#x3D;&quot;#cartMenu&quot; data-toggle&#x3D;&quot;dropdown&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-link dropdown-toggle mr-2&quot; href&#x3D;&quot;#cartMenu&quot; data-toggle&#x3D;&quot;dropdown&quot; #btnDropdown&gt;
             &lt;i class&#x3D;&quot;fa fa-shopping-cart fa-lg&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
         &lt;div class&#x3D;&quot;dropdown-menu dropdown-menu-right m-0 p-0&quot; aria-labelledby&#x3D;&quot;dropdownMenuButton&quot; id&#x3D;&quot;cartMenu&quot;&gt;
@@ -731,6 +798,7 @@ export class AppModule {}</code></pre></div>
                                                 &#x27;text-success&#x27;: isConfig &amp;&amp; item?._metadata?.action !&#x3D;&#x3D; &#x27;exclude&#x27; &amp;&amp; secondary}&quot;&gt;
                                     &lt;span *ngIf&#x3D;&quot;item?._metadata?.action &#x3D;&#x3D;&#x3D; &#x27;exclude&#x27; &amp;&amp; secondary&quot;&gt; - &lt;/span&gt;
                                     &lt;apt-price [record]&#x3D;&quot;item&quot; type&#x3D;&quot;baseExtended&quot;&gt;&lt;/apt-price&gt;
+                                    &lt;span&gt;&lt;&lt;/span&gt;
                                 &lt;/strong&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
@@ -785,6 +853,7 @@ export class AppModule {}</code></pre></div>
                 <pre class="line-numbers"><code class="language-scss">:host{
     position: relative;
     display: block;
+    z-index: 10000;
     img{
         max-width: 3rem;
     }
@@ -853,8 +922,8 @@ export class AppModule {}</code></pre></div>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="cartItems$ | async as cartItems">    <div class="dropdown">        <button class="btn btn-link dropdown-toggle mr-2" href="#cartMenu" data-toggle="dropdown">            <i class="fa fa-shopping-cart fa-lg"></i>        </button>        <div class="dropdown-menu dropdown-menu-right m-0 p-0" aria-labelledby="dropdownMenuButton" id="cartMenu">            <ng-container                *ngTemplateOutlet="mainBlock; context: {lineItems:cartItems, config: (config$ | async), unsavedItems: unsavedItems$ | async}">            </ng-container>            <ng-template #mainBlock let-lineItems="lineItems" let-config="config" let-unsavedItems="unsavedItems">                <ul class="list-group p-0">                    <ng-container *ngIf="cartItems?.length > 0; else empty">                        <ng-container                            *ngTemplateOutlet="listItems; context: {lineItems: cartItems, primary: config?.isConfig, isConfig: config?.isConfig}">                        </ng-container>                        <ng-container *ngIf="!config?.isConfig">                            <ng-container *ngTemplateOutlet="footersection; context: {isConfig: false}">                            </ng-container>                        </ng-container>                    </ng-container>                    <ng-container *ngIf="config?.isConfig">                        <li class="seperator">                            <span>{{ \'MINI_CART.UNSAVED_CHANGES\' | translate}}                                <span *ngIf="!config?.relatedTo">({{unsavedItems?.length}})</span>                            </span>                        </li>                        <li *ngIf="config?.relatedTo">                            <p class="pl-4 pr-4"                                [innerHTML]="\'MINI_CART.UNSAVED_CHANGES_TEXT\' | translate: {value: config?.relatedTo?.Product.Name}">                            </p>                        </li>                        <ng-container *ngIf="!config?.relatedTo">                            <ng-container                                *ngTemplateOutlet="listItems; context: {lineItems: unsavedItems, secondary: config?.isConfig, isConfig: config?.isConfig, primaryItems: cartItems}">                            </ng-container>                        </ng-container>                        <ng-container *ngTemplateOutlet="footersection; context: {lineItems: unsavedItems, isConfig: config?.isConfig,                                 relatedTo: config?.relatedTo, productId: config?.productId}">                        </ng-container>                    </ng-container>                </ul>            </ng-template>            <ng-template #listItems let-lineItems="lineItems" let-primary="primary" let-secondary="secondary"                let-isConfig="isConfig" let-primaryItems="primaryItems">                <ng-container *ngFor="let item of lineItems; let i = index; trackBy: trackById">                    <li class="media list-group-item d-flex"                        [ngClass]="{\'last-list-item\': (lineItems?.length === (i+1) && primary && isConfig), \'first-list-item\': ((i === 0) && secondary && isConfig)}"                        *ngIf="item?.LineType === \'Product/Service\' && item?.Product">                        <img class="align-self-center"                            [src]="sanitizer.bypassSecurityTrustUrl(item.Product?.IconId | image)"                            alt="Generic placeholder image">                        <div class="media-body ml-3">                            <h6 class="m-0 d-flex justify-content-between align-items-center">                                <div>                                    <a href="javascript:void(0)"                                        [routerLink]="[productLink, item.Product[identifier], item.Id]"                                        *ngIf="item?.Product && item?.Id; else read">                                        {{item.Product?.Name}}                                    </a>                                    <ng-template #read>                                        {{item.Product?.Name}}                                    </ng-template>                                </div>                                <button *ngIf="item?.IsPrimaryLine && !isConfig" class="btn btn-link p-0 m-0"                                    (click)="removeCartItem(item, $event)" [ladda]="item?._metadata?.deleting"                                    data-style="zoom-in" data-spinner-color="black">                                    <span class="fa fa-trash"></span>                                </button>                            </h6>                            <span class="d-block small">{{item.Product?.ProductCode}}</span>                            <div class="d-flex align-items-center">                                <apt-input-field *ngIf="!isConfig; else inputField" inline="true"                                    [(ngModel)]="item.Quantity" [entity]="entity" field="Quantity"                                    (change)="changeItemQuantity(item)" [small]="true" [inline]="true"                                    [readonly]="item?.LineStatus?.toLowerCase()===\'cancelled\'" class="w-50 mt-2">                                </apt-input-field>                                <ng-template #inputField>                                    <div class="w-50 mt-2">                                        <div class="form-group align-items-center d-flex">                                            <label class="font-weight-bold col-form-label-sm m-0 mr-2">{{\'COMMON.QUANTITY\' | translate}}</label>                                            <span *ngIf="secondary else primaryItem" class="font-weight-bold" [ngClass]="item?._metadata?.action === \'exclude\' && secondary ? \'text-danger\' : \'text-success\'">                                                {{(item?._metadata?.action === \'exclude\' && secondary) ? - item?.Quantity : \'+\' + item?.Quantity}}                                            </span>                                            <ng-template #primaryItem>                                                <span class="font-weight-bold">{{item?.Quantity}}</span>                                            </ng-template>                                        </div>                                    </div>                                </ng-template>                                <strong class="d-flex ml-auto"                                    [ngClass]="{\'text-default\': !isConfig,                                                \'text-danger\': isConfig && item?._metadata?.action === \'exclude\' && secondary,                                                \'text-success\': isConfig && item?._metadata?.action !== \'exclude\' && secondary}">                                    <span *ngIf="item?._metadata?.action === \'exclude\' && secondary"> - </span>                                    <apt-price [record]="item" type="baseExtended"></apt-price>                                </strong>                            </div>                        </div>                    </li>                </ng-container>            </ng-template>            <ng-template #footersection let-lineItems="lineItems" let-isConfig="isConfig" let-relatedTo="relatedTo"                let-productId="productId">                <li class="list-group-item bg-light">                    <div class="d-flex justify-content-between">                        <span>{{ \'MINI_CART.CART_TOTAL\' | translate}}</span>                        <strong>                            <apt-price [record]="isConfig? (secondaryCart$ | async) : (cart$ | async)"></apt-price>                        </strong>                    </div>                </li>                <li class="list-group-item bg-light d-flex" *ngIf="!isConfig">                    <button class="btn btn-primary btn-raised btn-block"                        (click)="navigateToCart()">{{ \'MINI_CART.VIEW_CART\' | translate}}</button>                </li>                <li class="list-group-item bg-light d-flex justify-content-end" *ngIf="isConfig">                    <button class="btn btn-link mr-2"                        (click)="navigateToCart()">{{ \'MINI_CART.VIEW_CART\' | translate}}</button>                    <button class="btn btn-primary"                        (click)="saveChanges(relatedTo, isConfig, productId)" [ladda]="loading"                        [attr.data-style]="\'zoom-in\'"                        [disabled]="disabled$ | async">{{\'MINI_CART.SAVE_CHANGES\' | translate}}                        <span *ngIf="!relatedTo">({{lineItems?.length}})</span>                    </button>                </li>            </ng-template>            <ng-template #empty>                <ul class="list-group p-0">                    <li class="list-group-item bg-light">                        {{ \'MINI_CART.YOUR_CART_IS_EMPTY\' | translate}}                    </li>                </ul>            </ng-template>        </div>    </div>    <span class="badge badge-primary p-1" *ngIf="cartItems?.length > 0">{{cartItems?.length}}</span></ng-container></div>'
-    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="cartItems$ | async as cartItems">    <div class="dropdown">        <button class="btn btn-link dropdown-toggle mr-2" href="#cartMenu" data-toggle="dropdown" #btnDropdown>            <i class="fa fa-shopping-cart fa-lg"></i>        </button>        <div class="dropdown-menu dropdown-menu-right m-0 p-0" aria-labelledby="dropdownMenuButton" id="cartMenu">            <ng-container                *ngTemplateOutlet="mainBlock; context: {lineItems:cartItems, config: (config$ | async), unsavedItems: unsavedItems$ | async}">            </ng-container>            <ng-template #mainBlock let-lineItems="lineItems" let-config="config" let-unsavedItems="unsavedItems">                <ul class="list-group p-0">                    <ng-container *ngIf="cartItems?.length > 0; else empty">                        <ng-container                            *ngTemplateOutlet="listItems; context: {lineItems: cartItems, primary: config?.isConfig, isConfig: config?.isConfig}">                        </ng-container>                        <ng-container *ngIf="!config?.isConfig">                            <ng-container *ngTemplateOutlet="footersection; context: {isConfig: false}">                            </ng-container>                        </ng-container>                    </ng-container>                    <ng-container *ngIf="config?.isConfig">                        <li class="seperator">                            <span>{{ \'MINI_CART.UNSAVED_CHANGES\' | translate}}                                <span *ngIf="!config?.relatedTo">({{unsavedItems?.length}})</span>                            </span>                        </li>                        <li *ngIf="config?.relatedTo">                            <p class="pl-4 pr-4"                                [innerHTML]="\'MINI_CART.UNSAVED_CHANGES_TEXT\' | translate: {value: config?.relatedTo?.Product.Name}">                            </p>                        </li>                        <ng-container *ngIf="!config?.relatedTo">                            <ng-container                                *ngTemplateOutlet="listItems; context: {lineItems: unsavedItems, secondary: config?.isConfig, isConfig: config?.isConfig, primaryItems: cartItems}">                            </ng-container>                        </ng-container>                        <ng-container *ngTemplateOutlet="footersection; context: {lineItems: unsavedItems, isConfig: config?.isConfig,                                 relatedTo: config?.relatedTo, productId: config?.productId}">                        </ng-container>                    </ng-container>                </ul>            </ng-template>            <ng-template #listItems let-lineItems="lineItems" let-primary="primary" let-secondary="secondary"                let-isConfig="isConfig" let-primaryItems="primaryItems">                <ng-container *ngFor="let item of lineItems; let i = index; trackBy: trackById">                    <li class="media list-group-item d-flex"                        [ngClass]="{\'last-list-item\': (lineItems?.length === (i+1) && primary && isConfig), \'first-list-item\': ((i === 0) && secondary && isConfig)}"                        *ngIf="item?.LineType === \'Product/Service\' && item?.Product">                        <img class="align-self-center"                            [src]="sanitizer.bypassSecurityTrustUrl(item.Product?.IconId | image)"                            alt="Generic placeholder image">                        <div class="media-body ml-3">                            <h6 class="m-0 d-flex justify-content-between align-items-center">                                <div>                                    <a href="javascript:void(0)"                                        [routerLink]="[productLink, item.Product[identifier], item.Id]"                                        *ngIf="item?.Product && item?.Id; else read">                                        {{item.Product?.Name}}                                    </a>                                    <ng-template #read>                                        {{item.Product?.Name}}                                    </ng-template>                                </div>                                <button *ngIf="item?.IsPrimaryLine && !isConfig" class="btn btn-link p-0 m-0"                                    (click)="removeCartItem(item, $event)" [ladda]="item?._metadata?.deleting"                                    data-style="zoom-in" data-spinner-color="black">                                    <span class="fa fa-trash"></span>                                </button>                            </h6>                            <span class="d-block small">{{item.Product?.ProductCode}}</span>                            <div class="d-flex align-items-center">                                <apt-input-field *ngIf="!isConfig; else inputField" inline="true"                                    [(ngModel)]="item.Quantity" [entity]="entity" field="Quantity"                                    (change)="changeItemQuantity(item)" [small]="true" [inline]="true"                                    [readonly]="item?.LineStatus?.toLowerCase()===\'cancelled\'" class="w-50 mt-2">                                </apt-input-field>                                <ng-template #inputField>                                    <div class="w-50 mt-2">                                        <div class="form-group align-items-center d-flex">                                            <label class="font-weight-bold col-form-label-sm m-0 mr-2">{{\'COMMON.QUANTITY\' | translate}}</label>                                            <span *ngIf="secondary else primaryItem" class="font-weight-bold" [ngClass]="item?._metadata?.action === \'exclude\' && secondary ? \'text-danger\' : \'text-success\'">                                                {{(item?._metadata?.action === \'exclude\' && secondary) ? - item?.Quantity : \'+\' + item?.Quantity}}                                            </span>                                            <ng-template #primaryItem>                                                <span class="font-weight-bold">{{item?.Quantity}}</span>                                            </ng-template>                                        </div>                                    </div>                                </ng-template>                                <strong class="d-flex ml-auto"                                    [ngClass]="{\'text-default\': !isConfig,                                                \'text-danger\': isConfig && item?._metadata?.action === \'exclude\' && secondary,                                                \'text-success\': isConfig && item?._metadata?.action !== \'exclude\' && secondary}">                                    <span *ngIf="item?._metadata?.action === \'exclude\' && secondary"> - </span>                                    <apt-price [record]="item" type="baseExtended"></apt-price>                                    <span><</span>                                </strong>                            </div>                        </div>                    </li>                </ng-container>            </ng-template>            <ng-template #footersection let-lineItems="lineItems" let-isConfig="isConfig" let-relatedTo="relatedTo"                let-productId="productId">                <li class="list-group-item bg-light">                    <div class="d-flex justify-content-between">                        <span>{{ \'MINI_CART.CART_TOTAL\' | translate}}</span>                        <strong>                            <apt-price [record]="isConfig? (secondaryCart$ | async) : (cart$ | async)"></apt-price>                        </strong>                    </div>                </li>                <li class="list-group-item bg-light d-flex" *ngIf="!isConfig">                    <button class="btn btn-primary btn-raised btn-block"                        (click)="navigateToCart()">{{ \'MINI_CART.VIEW_CART\' | translate}}</button>                </li>                <li class="list-group-item bg-light d-flex justify-content-end" *ngIf="isConfig">                    <button class="btn btn-link mr-2"                        (click)="navigateToCart()">{{ \'MINI_CART.VIEW_CART\' | translate}}</button>                    <button class="btn btn-primary"                        (click)="saveChanges(relatedTo, isConfig, productId)" [ladda]="loading"                        [attr.data-style]="\'zoom-in\'"                        [disabled]="disabled$ | async">{{\'MINI_CART.SAVE_CHANGES\' | translate}}                        <span *ngIf="!relatedTo">({{lineItems?.length}})</span>                    </button>                </li>            </ng-template>            <ng-template #empty>                <ul class="list-group p-0">                    <li class="list-group-item bg-light">                        {{ \'MINI_CART.YOUR_CART_IS_EMPTY\' | translate}}                    </li>                </ul>            </ng-template>        </div>    </div>    <span class="badge badge-primary p-1" *ngIf="cartItems?.length > 0">{{cartItems?.length}}</span></ng-container></div>'
+    var COMPONENTS = [{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LoginFormComponent', 'selector': 'apt-login-form'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentComponent', 'selector': 'apt-payment'},{'name': 'PaymentIFrameComponent', 'selector': 'apt-payment-iframe'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TaxPopHoverComponent', 'selector': 'apt-tax-pophover'}];
     var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
     var ACTUAL_COMPONENT = {'name': 'MiniCartComponent'};
 </script>

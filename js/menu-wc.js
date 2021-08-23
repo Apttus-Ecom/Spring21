@@ -247,13 +247,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/PricingModule.html" data-type="entity-link">PricingModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-PricingModule-afae0363c82141427b8a6004ca59fb15"' : 'data-target="#xs-pipes-links-module-PricingModule-afae0363c82141427b8a6004ca59fb15"' }>
+                                            'data-target="#pipes-links-module-PricingModule-b322a88a596ec2db02707a1824c38af3"' : 'data-target="#xs-pipes-links-module-PricingModule-b322a88a596ec2db02707a1824c38af3"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-PricingModule-afae0363c82141427b8a6004ca59fb15"' :
-                                            'id="xs-pipes-links-module-PricingModule-afae0363c82141427b8a6004ca59fb15"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-PricingModule-b322a88a596ec2db02707a1824c38af3"' :
+                                            'id="xs-pipes-links-module-PricingModule-b322a88a596ec2db02707a1824c38af3"' }>
                                             <li class="link">
                                                 <a href="pipes/AttributeValuePricePipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AttributeValuePricePipe</a>
@@ -265,6 +265,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="pipes/CartPricePipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">CartPricePipe</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="pipes/ConvertCurrencyPipe.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ConvertCurrencyPipe</a>
                                             </li>
                                             <li class="link">
                                                 <a href="pipes/LineItemPricePipe.html"
@@ -303,6 +307,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="modules/ProductSearchModule.html" data-type="entity-link">ProductSearchModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-ProductSearchModule-25cf66536e6b2be6296447d89c3d4d98"' : 'data-target="#xs-components-links-module-ProductSearchModule-25cf66536e6b2be6296447d89c3d4d98"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ProductSearchModule-25cf66536e6b2be6296447d89c3d4d98"' :
+                                            'id="xs-components-links-module-ProductSearchModule-25cf66536e6b2be6296447d89c3d4d98"' }>
+                                            <li class="link">
+                                                <a href="components/ProductSearchComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProductSearchComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                             </li>
                             <li class="link">
                                 <a href="modules/TableModule.html" data-type="entity-link">TableModule</a>
@@ -496,9 +515,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/BitString.html" data-type="entity-link">BitString</a>
                             </li>
                             <li class="link">
-                                <a href="classes/BundleProduct.html" data-type="entity-link">BundleProduct</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/Cart.html" data-type="entity-link">Cart</a>
                             </li>
                             <li class="link">
@@ -661,9 +677,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/ProductAttributeRuleView-1.html" data-type="entity-link">ProductAttributeRuleView</a>
                             </li>
                             <li class="link">
-                                <a href="classes/ProductAttributeServiceAIC.html" data-type="entity-link">ProductAttributeServiceAIC</a>
-                            </li>
-                            <li class="link">
                                 <a href="classes/ProductAttributeValue.html" data-type="entity-link">ProductAttributeValue</a>
                             </li>
                             <li class="link">
@@ -692,6 +705,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/ProductOptionPrice.html" data-type="entity-link">ProductOptionPrice</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ProductResult.html" data-type="entity-link">ProductResult</a>
                             </li>
                             <li class="link">
                                 <a href="classes/ProductTranslation.html" data-type="entity-link">ProductTranslation</a>
@@ -788,16 +804,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/AuthorizationService.html" data-type="entity-link">AuthorizationService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/CartApiService.html" data-type="entity-link">CartApiService</a>
-                                </li>
-                                <li class="link">
                                     <a href="injectables/CartItemService.html" data-type="entity-link">CartItemService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/CartService.html" data-type="entity-link">CartService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/CategoryService.html" data-type="entity-link">CategoryService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ConstraintRuleConditionService.html" data-type="entity-link">ConstraintRuleConditionService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ConstraintRuleService.html" data-type="entity-link">ConstraintRuleService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ContactService.html" data-type="entity-link">ContactService</a>
@@ -863,13 +882,22 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/PriceService.html" data-type="entity-link">PriceService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ProductAttributeGroupMemberService.html" data-type="entity-link">ProductAttributeGroupMemberService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ProductAttributeGroupService.html" data-type="entity-link">ProductAttributeGroupService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ProductAttributeRuleService.html" data-type="entity-link">ProductAttributeRuleService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ProductAttributeRuleViewService.html" data-type="entity-link">ProductAttributeRuleViewService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ProductAttributeService.html" data-type="entity-link">ProductAttributeService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/ProductCategoryService.html" data-type="entity-link">ProductCategoryService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/ProductConfigurationService.html" data-type="entity-link">ProductConfigurationService</a>
@@ -918,6 +946,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/TranslatorLoaderService.html" data-type="entity-link">TranslatorLoaderService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/TurboApiService.html" data-type="entity-link">TurboApiService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/UserApiService.html" data-type="entity-link">UserApiService</a>
@@ -979,10 +1010,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Carts.html" data-type="entity-link">Carts</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ChildRecordOptions.html" data-type="entity-link">ChildRecordOptions</a>
+                                <a href="interfaces/ChartInterface.html" data-type="entity-link">ChartInterface</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ConfigurationFlags.html" data-type="entity-link">ConfigurationFlags</a>
+                                <a href="interfaces/ChartOptions.html" data-type="entity-link">ChartOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ChildRecordOptions.html" data-type="entity-link">ChildRecordOptions</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ConfigurationState.html" data-type="entity-link">ConfigurationState</a>

@@ -109,8 +109,7 @@
                                 <a href="#getPromotionDetailsForQuoteLineItem">getPromotionDetailsForQuoteLineItem</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#getQuoteLineItemsForQuote">getQuoteLineItemsForQuote</a>
+                                <a href="#getQuoteLineItems">getQuoteLineItems</a>
                             </li>
                             <li>
                                 <a href="#getOptionsForItem">getOptionsForItem</a>
@@ -306,20 +305,18 @@ This method returns the adjustment items on a given quote line item.</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getQuoteLineItemsForQuote"></a>
+                    <a name="getQuoteLineItems"></a>
                     <span class="name">
                         <b>
-                            <span class="modifier">Public</span>
-                            getQuoteLineItemsForQuote
+                            getQuoteLineItems
                         </b>
-                        <a href="#getQuoteLineItemsForQuote"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getQuoteLineItems"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getQuoteLineItemsForQuote(quoteId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, days?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, orderBy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, orderDirection: "ASC" | "DESC")</code>
+<code>getQuoteLineItems(quoteId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -328,6 +325,24 @@ This method returns the adjustment items on a given quote line item.</p>
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>This method returns  list of quote line items for the given quoteId</p>
+<h3 id="example">Example:</h3>
+<p>```typescript
+      import { QuoteLineItemService, QuoteLineItem } from &#39;@apttus/ecommerce&#39;;
+      import { Observable } from &#39;rxjs/Observable&#39;;</p>
+<div><pre class="line-numbers"><code class="language-none">  export class MyComponent implements OnInit{
+      QuoteLineItemList: Array&lt;QuoteLineItem&gt;;
+      QuoteLineItemList$: Observable&lt;Array&lt;QuoteLineItem&gt;&gt;;
+
+      constructor(private quoteLineItemService:QuoteLineItemService){}
+
+      ngOnInit(){
+          this.quoteLineItemService.getQuoteLineItems(quoteId: string).subscribe(o =&gt; this.quoteLineItemList = o);
+          // or
+          this.quoteLineItemList$ = this.quoteLineItemService.getQuoteLineItems(quoteId: string);
+      }
+  }
+  ```</code></pre></div></div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -337,7 +352,7 @@ This method returns the adjustment items on a given quote line item.</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Default value</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -351,84 +366,11 @@ This method returns the adjustment items on a given quote line item.</p>
                                         No
                                     </td>
 
-                                    <td>
-                                        <code>null</code>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>days</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
 
                                     <td>
-                                        Yes
-                                    </td>
+                                        <p>the quote id to fetch the related quote line items results</p>
 
-                                    <td>
                                     </td>
-
-                                </tr>
-                                <tr>
-                                    <td>limit</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>10</code>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>pageNumber</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>0</code>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>orderBy</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>&#x27;CreatedDate&#x27;</code>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>orderDirection</td>
-                                    <td>
-                                            <code>&quot;ASC&quot; | &quot;DESC&quot;</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-                                    <td>
-                                        <code>&#x27;DESC&#x27;</code>
-                                    </td>
-
                                 </tr>
                             </tbody>
                         </table>
@@ -440,7 +382,8 @@ This method returns the adjustment items on a given quote line item.</p>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>an observable array of quote line items</p>
+
                     </div>
                 </td>
             </tr>
